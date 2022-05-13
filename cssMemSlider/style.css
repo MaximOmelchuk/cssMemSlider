@@ -119,13 +119,21 @@ input {
     border-color: #e5d452;
 }
 
+.labelWrap label:active{
+    background-color: rgb(214, 133, 57);
+    border-color: rgb(214, 133, 57);
+}
+
 #point1:checked ~ .textControlsWrap .controls .labelWrap1, 
 #point2:checked ~ .textControlsWrap > .controls .labelWrap2, 
 #point3:checked ~ .textControlsWrap > .controls .labelWrap3, 
 #point4:checked ~ .textControlsWrap > .controls .labelWrap4 {
     border-color: #e5d452;
     background-color: rgb(92, 105, 116);
-} 
+}
+
+
+
 
 @media screen and (max-width: 40rem) {
     .textControlsWrap {
