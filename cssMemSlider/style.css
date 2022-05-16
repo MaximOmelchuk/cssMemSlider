@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    max-width: 50rem;
+    height: 80vw;
+    max-height: 40rem;
+    padding: 1rem;
+    margin: 1rem;
+    overflow: hidden;
+    background-color: rgb(92, 105, 116);
+    border-radius: 1rem;
+}
+
+.slideWrap {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.slide {
+    height: 100%;
+    transform: translateX(-100%);
+    transition-duration: 0.7s;
+    opacity: 0;
+    width: 0rem;
+    margin: 0rem;
+    padding: 0rem; 
+    border-radius: 1rem;
+}
+
+.textControlsWrap {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.textWrap {
+    display: flex;
+    overflow: hidden;
+    height: 5rem;
+    width: 70%;
+    color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text {
+    transform: translateX(-100%);
+    transition-duration: 0.7s;
+    opacity: 0;
+    width: 0rem;
+    height: 0rem;
+    margin: 0rem;
+    padding: 0rem; 
+}
+
+#point1:checked ~ .slideWrap > .slide1, 
+#point2:checked ~ .slideWrap > .slide2, 
+#point3:checked ~ .slideWrap > .slide3, 
+#point4:checked ~ .slideWrap > .slide4 {
+    transform: translateX(0);
+    opacity: 1;
+    width: 100%;
+} 
+
+#point1:checked ~ .textControlsWrap .textWrap > .text1, 
+#point2:checked ~ .textControlsWrap .textWrap > .text2, 
+#point3:checked ~ .textControlsWrap .textWrap > .text3, 
+#point4:checked ~ .textControlsWrap .textWrap > .text4 {
+    transform: translateX(0);
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+} 
+
+.labelWrap {
+    width: 2rem;
+    height: 2rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; 
+}
+
+.labelWrap label {
+    width: 1rem;
+    height: 1rem;    
+    transition-duration: 0.7s;
+    border: 0.15rem solid #fff;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+input {
+    visibility: hidden;
+    width: 0rem;
+    height: 0rem;
+    margin: 0rem;
+    padding: 0rem;
+}
+
+#point1:checked ~ .textControlsWrap > .controls .labelWrap1, 
+#point2:checked ~ .textControlsWrap > .controls .labelWrap2, 
+#point3:checked ~ .textControlsWrap > .controls .labelWrap3, 
+#point4:checked ~ .textControlsWrap > .controls .labelWrap4 {
+    border-color: #e5d452;
+    background-color: rgb(92, 105, 116);
+}
+
+#point1:checked ~ .textControlsWrap > .controls .labelWrap:hover .labelWrap1, 
+#point2:checked ~ .textControlsWrap > .controls .labelWrap:hover .labelWrap2, 
+#point3:checked ~ .textControlsWrap > .controls .labelWrap:hover .labelWrap3, 
+#point4:checked ~ .textControlsWrap > .controls .labelWrap:hover .labelWrap4 {
+    border-color: #e5d452;
+    background-color: #e5d452;
+}
+
+#point2:checked ~ .textControlsWrap > .controls .labelWrap .innerlabel:active, 
+#point1:checked ~ .textControlsWrap > .controls .labelWrap .innerlabel:active, 
+#point3:checked ~ .textControlsWrap > .controls .labelWrap .innerlabel:active, 
+#point4:checked ~ .textControlsWrap > .controls .labelWrap .innerlabel:active {
+    background-color: rgb(214, 133, 57);
+    border-color: rgb(214, 133, 57);
+}
+
+.labelWrap:hover > label {
+    background-color: #e5d452;
+    border-color: #e5d452;
+}
+
+.labelWrap .innerlabel:active{
+    background-color: rgb(214, 133, 57);
+    border-color: rgb(214, 133, 57);
+}
+
+@media screen and (max-width: 40rem) {
+    .textControlsWrap {
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        overflow: visible;
+        align-items: start;
+    }
+    .controls {
+        align-self: center;
+    }
+
+    .textWrap {
+        font-size: 0.8rem;
+        width: 100%;
+    }
+
+    .slideWrap {
+        margin-bottom: 0.5rem;
+        height: 70%;
+    }
+
+    #wrapper {
+        height: 100vw;
+    }
+}
