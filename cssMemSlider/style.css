@@ -114,17 +114,7 @@ input {
     padding: 0rem;
 }
 
-.labelWrap:hover label {
-    background-color: #e5d452;
-    border-color: #e5d452;
-}
-
-.labelWrap label:active{
-    background-color: rgb(214, 133, 57);
-    border-color: rgb(214, 133, 57);
-}
-
-#point1:checked ~ .textControlsWrap .controls .labelWrap1, 
+#point1:checked ~ .textControlsWrap > .controls .labelWrap1, 
 #point2:checked ~ .textControlsWrap > .controls .labelWrap2, 
 #point3:checked ~ .textControlsWrap > .controls .labelWrap3, 
 #point4:checked ~ .textControlsWrap > .controls .labelWrap4 {
@@ -132,8 +122,31 @@ input {
     background-color: rgb(92, 105, 116);
 }
 
+#point1:checked ~ .textControlsWrap > .controls .labelWrap:hover .labelWrap1, 
+#point2:checked ~ .textControlsWrap > .controls .labelWrap:hover .labelWrap2, 
+#point3:checked ~ .textControlsWrap > .controls .labelWrap:hover .labelWrap3, 
+#point4:checked ~ .textControlsWrap > .controls .labelWrap:hover .labelWrap4 {
+    border-color: #e5d452;
+    background-color: #e5d452;
+}
 
+#point2:checked ~ .textControlsWrap > .controls .labelWrap .innerlabel:active, 
+#point1:checked ~ .textControlsWrap > .controls .labelWrap .innerlabel:active, 
+#point3:checked ~ .textControlsWrap > .controls .labelWrap .innerlabel:active, 
+#point4:checked ~ .textControlsWrap > .controls .labelWrap .innerlabel:active {
+    background-color: rgb(214, 133, 57);
+    border-color: rgb(214, 133, 57);
+}
 
+.labelWrap:hover > label {
+    background-color: #e5d452;
+    border-color: #e5d452;
+}
+
+.labelWrap .innerlabel:active{
+    background-color: rgb(214, 133, 57);
+    border-color: rgb(214, 133, 57);
+}
 
 @media screen and (max-width: 40rem) {
     .textControlsWrap {
